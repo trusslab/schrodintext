@@ -153,6 +153,7 @@ $ python3 armplat_1810.py
 ```
 $ cd optee/optee_os
 $ git remote add schrod_origin https://github.com/trusslab/schrodintext_optee.git
+$ git fetch schrod_origin
 $ git checkout -b schrodintext schrod_origin/schrodintext
 $ cd ../..
 ```
