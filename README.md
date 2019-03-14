@@ -166,7 +166,7 @@ $ ./build-scripts/build-target-bins.sh package
 ```
 
 ## Installation
-Prebuilt binaries are available here: link_here
+Prebuilt binaries are available [here](https://github.com/trusslab/schrodintext/releases).
 
 ### Install OP-TEE, Xen, and Kernel/DTB
 0. Turn on Juno board and connect USB cable and serial console cable to your PC to copy files. It is highly recommended to save a backup of your current Juno files. It is assumed that you already have a micro SD card for the right slot loaded with Juno firmware USING UEFI to boot. If not, a set of firmware binaries is also provided in the prebuilt binaries.
