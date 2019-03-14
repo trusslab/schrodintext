@@ -1,8 +1,10 @@
 # SchrodinText
 
-Copyright (c) 2017-2019 University of California, Irvine. All rights reserved.
+Copyright (c) 2016-2019 University of California, Irvine. All rights reserved.
 
-See [here](https://www.ics.uci.edu/~ardalan/papers/Amiri_Sani_MobiSys17.pdf) for technical details. Author: Ardalan Amiri Sani.
+People: Ardalan Amiri Sani, Nicholas Wei.
+
+See [here](https://www.ics.uci.edu/~ardalan/papers/Amiri_Sani_MobiSys17.pdf) for technical details.
 
 This document is shared under the GNU Free Documentation License WITHOUT ANY WARRANTY. See https://www.gnu.org/licenses/ for details.
 _______________________________
