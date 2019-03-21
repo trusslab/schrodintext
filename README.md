@@ -1,4 +1,4 @@
-# SchrodinText: Strong Protection of Sensitive Textual Content of Mobile Applications
+# SchrodinText
 
 Copyright (c) 2016-2019 University of California, Irvine. All rights reserved.
 
