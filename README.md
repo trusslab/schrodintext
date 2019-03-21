@@ -322,9 +322,9 @@ $ su
 5. Power down Juno board and mount SD card with Android into PC. Navigate to ```data/media/0/Pictures``` in mounted SD card to view screenshot. Verify text rendered on display does not show up when dumping framebuffer (taking screenshot).
 
 ## References
-- https://source.android.com/setup/build/downloading
-- https://source.android.com/setup/build/initializing
-- http://releases.linaro.org/members/arm/android/juno/
-- https://wiki.xenproject.org/wiki/Compiling_Xen_From_Source
-- https://community.arm.com/dev-platforms/w/docs/304/arm-reference-platforms-deliverables
-- https://community.arm.com/dev-platforms/w/docs/391/run-the-arm-platforms-deliverables-on-juno
+- [https://source.android.com/setup/build/downloading](https://source.android.com/setup/build/downloading)
+- [https://source.android.com/setup/build/initializing](https://source.android.com/setup/build/initializing)
+- [http://releases.linaro.org/members/arm/android/juno/](http://releases.linaro.org/members/arm/android/juno/)
+- [https://wiki.xenproject.org/wiki/Compiling_Xen_From_Source](https://wiki.xenproject.org/wiki/Compiling_Xen_From_Source)
+- [https://community.arm.com/dev-platforms/w/docs/304/arm-reference-platforms-deliverables](https://community.arm.com/dev-platforms/w/docs/304/arm-reference-platforms-deliverables)
+- [https://community.arm.com/dev-platforms/w/docs/391/run-the-arm-platforms-deliverables-on-juno](https://community.arm.com/dev-platforms/w/docs/391/run-the-arm-platforms-deliverables-on-juno)
