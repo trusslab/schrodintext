@@ -1,4 +1,4 @@
-# SchrodinText
+# SchrodinText: Strong Protection of Sensitive Textual Content of Mobile Applications
 
 Copyright (c) 2016-2019 University of California, Irvine. All rights reserved.
 
@@ -25,12 +25,14 @@ SchrodinText is comprised of three main components:
 The section below will guide you through downloading and building all components from source. If you would like to skip this step, there are prebuilt binaries provided in the "Install" section. It is recommended to use the same folder/file names as used below if building from source.
 
 ### Build Android
-1. Install build dependencies 
+1. Install build dependencies
+
 ```
 $ sudo apt-get install openjdk-8-jdk 
 $ sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip python
 ```
 2. Install ```repo``` tool
+
 ```
 # Make sure you have a bin/ directory in your home directory and that it is in your PATH.
 # If not run the following two commented commands first:
@@ -42,6 +44,7 @@ $ chmod a+x ~/bin/repo
 ```
 
 3. Get Source Code
+
 ```
 # For AOSP 7.1.1_r13
 $ mkdir juno_aosp_nougat && cd juno_aosp_nougat
@@ -72,6 +75,7 @@ $ ./linaro_android_build_cmds.sh -t
 4. Apply SchrodinText changes
 
 Navigate to AOSP 7 directory at ```juno_aosp_nougat/android```. Then apply the following changes:
+
 ```
 $ cd frameworks/base
 $ git remote add schrod_origin https://github.com/trusslab/schrodintext_android_base.git
@@ -111,6 +115,7 @@ $ make -j4
 ```
 
 Navigate to AOSP 8 directory at ```juno_aosp_oreo/android```. Then apply the following changes:
+
 ```
 $ cd kernel/linaro/armlt
 $ git remote add schrod_origin https://github.com/trusslab/schrodintext_kernel.git
@@ -126,16 +131,19 @@ $ make -j4
 
 ### Build Xen
 1. Install aarch64 cross-compiler
+
 ```
 $ sudo apt-get install gcc-aarch64-linux-gnu
 ```
 
 2. Download source code with SchrodinText changes applied
+
 ```
 $ git clone https://github.com/trusslab/schrodintext_xen.git schrodintext_xen
 ```
 
 3. Build Xen
+
 ```
 $ cd schrodintext_xen
 $ make dist-xen XEN_TARGET_ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
@@ -143,6 +151,7 @@ $ make dist-xen XEN_TARGET_ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
 
 ### Build OP-TEE
 1. Download Juno Arm Platform deliverables
+
 ```
 $ mkdir juno_platform && cd juno_platform
 $ wget https://community.arm.com/cfs-file/__key/communityserver-wikis-components-files/00-00-00-00-10/6825.armplat_5F00_1810.py
@@ -150,6 +159,7 @@ $ python3 armplat_1810.py
 ```
 
 2. Apply SchrodinText changes to OP-TEE
+
 ```
 $ cd optee/optee_os
 $ git remote add schrod_origin https://github.com/trusslab/schrodintext_optee.git
@@ -159,6 +169,7 @@ $ cd ../..
 ```
 
 3. Build and package OP-TEE
+
 ```
 $ ./build-scripts/build-all.sh clean
 $ ./build-scripts/build-all.sh build
@@ -170,6 +181,7 @@ Prebuilt binaries are available [here](https://github.com/trusslab/schrodintext/
 
 ### Install OP-TEE, Xen, and Kernel/DTB
 0. Turn on Juno board and connect USB cable and serial console cable to your PC to copy files. It is highly recommended to save a backup of your current Juno files. It is assumed that you already have a micro SD card for the right slot loaded with Juno firmware USING UEFI to boot. If not, a set of firmware binaries is also provided in the prebuilt binaries.
+
 ```
 # Access serial console for Juno. Use the following settings:
 #    115200 baud
@@ -182,11 +194,13 @@ Cmd> usb_on
 ```
 
 1. Navigate to ```juno_platform``` or get ```fip.bin``` provided in prebuilt binaries
+
 ```
 $ cd output/juno/juno
 ```
 
 2. Copy OP-TEE build output to Juno board.
+
 ```
 # Mounted directory will usually be in /media/$user/JUNO
 $ mv fip-uefi.bin fip.bin
@@ -194,6 +208,7 @@ $ sudo cp fip.bin /media/$user/JUNO/SOFTWARE
 ```
 
 3. Navigate to ```schrodintext_xen``` or get ```xen.efi``` provided in prebuilt binaries
+
 ```
 $ cd xen
 $ mv xen xen.efi
@@ -203,12 +218,14 @@ $ sudo cp xen.cfg /media/$user/JUNO/SOFTWARE
 ```
 
 4. Navigate to ```juno_aosp_nougat``` or get ```ramdisk.img``` provided in prebuilt binaries
+
 ```
 $ cd out/target/product/juno
 $ sudo cp ramdisk.img /media/$user/JUNO/SOFTWARE
 ```
 
 5. Navigate to ```juno_aosp_oreo``` or get ```Image``` and ```juno.dtb``` provided in prebuilt binaries
+
 ```
 $ cd out/target/product/juno/obj/kernel/arch/arm64/boot
 $ sudo cp Image /media/$user/JUNO/SOFTWARE
@@ -216,6 +233,7 @@ $ sudo cp juno.dtb /media/$user/JUNO/SOFTWARE
 ```
 
 6. Add Xen files to ```images.txt``` in Juno configuration so it gets flashed to Juno's memory or use the patched Juno firmware provided in the prebuilt binaries (if using patched Juno firmware copy all files to ```/media/$user/juno/``` and overwrite when asked, then move to next step)
+
 ```
 # Because this file can vary, it is safer to manually add the Xen files.
 # The folder containing image.txt is different depending on your Juno board revision number.
@@ -241,6 +259,7 @@ $ sudo vi /media/$user/JUNO/SITE1/HB10262B/images.txt
 ```
 
 7. Sync and disconnect USB
+
 ```
 $ sync
 Cmd> usb_off
@@ -249,6 +268,7 @@ Cmd> usb_off
 ### Install Android
 
 1. Navigate to ```juno_aosp_nougat``` or use ```android.img``` provided in prebuilt binaries and skip to step 3
+
 ```
 $ cd out/target/product/juno
 $ mkdir fs_images
@@ -259,11 +279,13 @@ $ chmod a+x android-img.sh
 ```
 
 2. Package .imgs into ```android.img```
+
 ```
 $ ./android-img.sh
 ```
 
 3. Mount micro SD card and flash ```android.img``` to micro SD card
+
 ```
 # Use 'lsblk' after mounting SD card to see which /dev/sdX it is. Replace 'X' with appropriate identifier.
 $ lsblk
@@ -279,6 +301,7 @@ There is a test app loaded called SchrodinTextApp that is used to demonstrate Sc
 1. Power on Juno Board and navigate to UEFI Shell through serial console.
 
 2. Launch Xen which will load Android automatically as dom0 after Xen initializes.
+
 ```
 Shell> fs2:
 FS2:> xen.efi
@@ -286,6 +309,7 @@ FS2:> xen.efi
 3. Wait until Android is initialized. Plug HDMI cable from a monitor into HDMI1 (2nd) port for Juno. Verify that GUI is visible.
 
 4. Launch SchrodinTextApp
+
 ```
 # In the serial console Android Linux shell in Juno
 $ su
