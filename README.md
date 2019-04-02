@@ -6,8 +6,7 @@ People: Ardalan Amiri Sani, Nicholas Wei.
 
 See [here](https://www.ics.uci.edu/~ardalan/papers/Amiri_Sani_MobiSys17.pdf) for technical details.
 
-This document is shared under the GNU Free Documentation License WITHOUT ANY WARRANTY. See https://www.gnu.org/licenses/ for details.
-_______________________________
+This document is shared under the GNU Free Documentation License WITHOUT ANY WARRANTY. See [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/) for details.
 
 ## Prerequisites
 - Linux (assumes >= Ubuntu 16.04 LTS) machine with ~300GB of free space.
