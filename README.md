@@ -330,3 +330,7 @@ Power down Juno board and mount SD card with Android into PC. Navigate to ```dat
 - [https://wiki.xenproject.org/wiki/Compiling_Xen_From_Source](https://wiki.xenproject.org/wiki/Compiling_Xen_From_Source)
 - [https://community.arm.com/dev-platforms/w/docs/304/arm-reference-platforms-deliverables](https://community.arm.com/dev-platforms/w/docs/304/arm-reference-platforms-deliverables)
 - [https://community.arm.com/dev-platforms/w/docs/391/run-the-arm-platforms-deliverables-on-juno](https://community.arm.com/dev-platforms/w/docs/391/run-the-arm-platforms-deliverables-on-juno)
+
+# Acknowledgments
+
+The work was supported in part by NSF Award #1617513.
