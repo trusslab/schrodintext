@@ -13,6 +13,7 @@ This document is shared under the GNU Free Documentation License WITHOUT ANY WAR
 - Should be x86 64-bit with 8GB+ of RAM
 - ARM Development Juno Board w/ serial console access
 - Micro SD Card (>=8GB) for the Juno Board
+- See [here](https://github.com/trusslab/schrodintext/tree/master/hikey) for instructions on running using the HiKey board.
 
 ## Organization
 SchrodinText is comprised of three main components:
