@@ -71,7 +71,7 @@ Navigate to AOSP 7 directory at ```hikey_aosp_nougat/android```. Then apply the 
 $ cd frameworks/base
 $ git remote add schrod_origin https://github.com/trusslab/schrodintext_android_base_hikey.git
 $ git fetch schrod_origin
-$ git checkout -b schrodintext schrod_origin/schrodintext
+$ git checkout -b schrodintext schrod_origin/schrod_hikey
 $ cd ..
 
 $ cd minikin
@@ -91,6 +91,10 @@ $ wget https://github.com/trusslab/schrodintext/raw/master/files/SchrodinTextApp
 $ cd ../../build/target/product
 $ sed -i 's/^PRODUCT_PACKAGES := \/PRODUCT_PACKAGES := SchrodinTextApp \/" generic_no_telephony.mk
 $ cd ../../../../..
+
+$ cd kernel/linaro/hisilicon
+$ git remote add schrod_origin https://github.com/trusslab/schrodintext_android_kernel_hikey.git
+$ git checkout -b schrodintext schrod_origin/schrod_hikey
 
 # Use new grub.cfg to have Xen boot
 $ cd device/linaro/hikey/bootloader/EFI/BOOT
